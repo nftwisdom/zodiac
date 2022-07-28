@@ -124,19 +124,19 @@ function App() {
 
   const claimNFTs = () => {
     let cost = CONFIG.WEI_COST;
-    let minter = blockchain.account;
+    let minter = String(blockchain.account);
+    const p = document.getElementById(minter);
     let gasLimit = CONFIG.GAS_LIMIT;
     let totalCostWei = String(cost * 1);
     let totalGasLimit = String(gasLimit * 1);
     console.log("Cost: ", totalCostWei);
     console.log("Gas limit: ", totalGasLimit);
     setFeedback(`Minting your ${CONFIG.NFT_NAME}...`);
-    let signer = String(Signatures);
-    if (Array.from(Signatures).includes(minter)){
+    if (Signatures.minter != ""){
     setClaimingNft(true);
     console.log(Signatures.minter);
     blockchain.smartContract.methods
-      .Claim(signer.getstring(minter),mintID)
+      .Claim(p,mintID)
       .send({
         gasLimit: String(totalGasLimit),
         to: CONFIG.CONTRACT_ADDRESS,
@@ -192,13 +192,13 @@ function App() {
   };
 
   const getSignatures = async () => {
-    const signatureResponse = await fetch("/signatures.json", {
+    var signatureResponse = await fetch("/signatures.json", {
       headers: {
         "Content-Type": "application/json",
         Accept: "application/json",
       },
     });
-    const signature = await signatureResponse.json();
+    var signature = await signatureResponse.json();
     setSignature(signature);
   };
 
