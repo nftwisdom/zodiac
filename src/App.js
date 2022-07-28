@@ -102,7 +102,7 @@ function App() {
   const [claimingNft, setClaimingNft] = useState(false);
   const [feedback, setFeedback] = useState(`0-Aries 1-Taurus 2-Gemini 3-Cancer 4-Leo 5-Virgo 6-Libra 7-Scorpio 8-Sagittarius 9-Capricorn 10-Aquarius 11-Pisces. Choose ID and click claim to mint 1. Max 2 per wallet.`);
   const [mintID, setMintID] = useState(0);
-  const [Signatures, setSignature] = useState({ACCOUNT: ""});
+  const [Signatures, setSignature] = useState({WALLET: ""});
   const [CONFIG, SET_CONFIG] = useState({
     CONTRACT_ADDRESS: "",
     SCAN_LINK: "",
@@ -124,19 +124,17 @@ function App() {
 
   const claimNFTs = () => {
     let cost = CONFIG.WEI_COST;
-    let minter = String(blockchain.account);
-    const p = document.getElementById(minter);
     let gasLimit = CONFIG.GAS_LIMIT;
     let totalCostWei = String(cost * 1);
     let totalGasLimit = String(gasLimit * 1);
+    for (let k of Object.keys(Signatures)){
+    if (k = String(blockchain.account)){
     console.log("Cost: ", totalCostWei);
     console.log("Gas limit: ", totalGasLimit);
     setFeedback(`Minting your ${CONFIG.NFT_NAME}...`);
-    if (Signatures.minter != ""){
     setClaimingNft(true);
-    console.log(Signatures.minter);
     blockchain.smartContract.methods
-      .Claim(p,mintID)
+      .Claim(Signatures.k,mintID)
       .send({
         gasLimit: String(totalGasLimit),
         to: CONFIG.CONTRACT_ADDRESS,
@@ -156,8 +154,9 @@ function App() {
         setClaimingNft(false);
         dispatch(fetchData(blockchain.account));
       });
-  };
+    }
   }
+}
   const decrementMintID = () => {
     let newMintID = mintID - 1;
     if (newMintID < 1) {
@@ -165,7 +164,6 @@ function App() {
     }
     setMintID(newMintID);
   };
-
   const incrementMintID = () => {
     let newMintID = mintID + 1;
     if (newMintID > 11) {
@@ -192,15 +190,19 @@ function App() {
   };
 
   const getSignatures = async () => {
-    var signatureResponse = await fetch("/signatures.json", {
+    const signatureResponse = await fetch("/signatures.json", {
       headers: {
         "Content-Type": "application/json",
         Accept: "application/json",
       },
     });
-    var signature = await signatureResponse.json();
+    const signature = await signatureResponse.json();
     setSignature(signature);
   };
+
+  useEffect(() => {
+    getSignatures();
+  }, []);
 
   useEffect(() => {
     getConfig();
@@ -210,9 +212,6 @@ function App() {
     getData();
   }, [blockchain.account]);
 
-  useEffect(() => {
-    getSignatures();
-  }, []);
 
   return (
     <s.Screen>
