@@ -1,0 +1,18 @@
+{
+  "CONTRACT_ADDRESS": "0x1bf0b70424D74422245d11C1A868E4a83B210e6e",
+  "SCAN_LINK": "https://rinkeby.etherscan.io/address/0x1bf0b70424D74422245d11C1A868E4a83B210e6e",
+  "NETWORK": {
+    "NAME": "Rinkeby Test Network",
+    "SYMBOL": "RinkebyETH",
+    "ID": 4
+  },
+  "NFT_NAME": "The Signs Of Zodiac",
+  "SYMBOL": "ZODIAC",
+  "MAX_SUPPLY": 720,
+  "WEI_COST": 3000000000000000,
+  "DISPLAY_COST": 0.03,
+  "GAS_LIMIT": 180000,
+  "MARKETPLACE": "Opensea",
+  "MARKETPLACE_LINK": "https://opensea.io/collection/nerdy-coder-clones",
+  "SHOW_BACKGROUND": true
+}
