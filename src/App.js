@@ -127,14 +127,12 @@ function App() {
     let gasLimit = CONFIG.GAS_LIMIT;
     let totalCostWei = String(cost * 1);
     let totalGasLimit = String(gasLimit * 1);
-    for (let k of Object.keys(Signatures)){
-    if (k = String(blockchain.account)){
     console.log("Cost: ", totalCostWei);
     console.log("Gas limit: ", totalGasLimit);
     setFeedback(`Minting your ${CONFIG.NFT_NAME}...`);
     setClaimingNft(true);
     blockchain.smartContract.methods
-      .Claim(Signatures.k,mintID)
+      .ClaimPublic(mintID)
       .send({
         gasLimit: String(totalGasLimit),
         to: CONFIG.CONTRACT_ADDRESS,
