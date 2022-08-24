@@ -1,9 +1,9 @@
 {
-  "CONTRACT_ADDRESS": "0x67Cf4586d11F3711091a121d66840Ebc95e857B3",
-  "SCAN_LINK": "https://rinkeby.etherscan.io/address/0x67Cf4586d11F3711091a121d66840Ebc95e857B3",
+  "CONTRACT_ADDRESS": "0x949F5a286b43A46433C485E96EeF9A38f4019443",
+  "SCAN_LINK": "https://rinkeby.etherscan.io/address/0x949F5a286b43A46433C485E96EeF9A38f4019443",
   "NETWORK": {
     "NAME": "Rinkeby Test Network",
-    "SYMBOL": "RinkebyETH",
+    "SYMBOL": "ETH",
     "ID": 4
   },
   "NFT_NAME": "The Signs Of Zodiac",
