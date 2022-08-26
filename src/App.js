@@ -130,6 +130,7 @@ function App() {
     let account = String(blockchain.account);
     var obj = JSON.parse(JSON.stringify(SIGNATURE));
     var whitelist = obj.account;
+    console.log(obj);
     console.log(account, whitelist);
     let totalCostPL = String(PLcost * 1);
     let totalCostWL = String(WLcost * 1);
