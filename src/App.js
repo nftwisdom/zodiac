@@ -128,10 +128,11 @@ function App() {
     let WLcost = CONFIG.WL_COST;
     let gasLimit = CONFIG.GAS_LIMIT;
     let account = String(blockchain.account);
-    var obj = JSON.parse(JSON.stringify(SIGNATURE));
-    var obj1 = jsonObj.getString(account));
-    var whitelist = obj.account;
-    console.log(obj);
+    var obj = JSON.stringify(SIGNATURE);
+    var obj1 = JSON.parse(obj);
+    JSONObject myjson = new JSONObject(obj);
+    var whitelist = obj1.account;
+    console.log(myjson);
     console.log(obj1, whitelist);
     let totalCostPL = String(PLcost * 1);
     let totalCostWL = String(WLcost * 1);
