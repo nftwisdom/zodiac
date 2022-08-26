@@ -199,9 +199,9 @@ function App() {
         Accept: "application/json",
       },
     });
-    // const sign = await signatureResponse.json();
-    // console.log("signature 198 : ",sign)
-    setSignature(signatureResponse);
+    const sign = await signatureResponse.json();
+    console.log("signature 198 : ",sign)
+    setSignature(sign);
     
   };
   
@@ -210,7 +210,7 @@ function App() {
       getData();
       await getConfig();
       await getSignatures();
-      console.log('SIGNATURE');
+      console.log(SIGNATURE);
     }
     main()
   }, [blockchain.account]);
