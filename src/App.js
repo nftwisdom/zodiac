@@ -128,7 +128,7 @@ function App() {
     let WLcost = CONFIG.WL_COST;
     let gasLimit = CONFIG.GAS_LIMIT;
     let account = String(blockchain.account);
-    var whitelist = SIGNATURE.account;
+    var whitelist = sign.account;
     let totalCostPL = String(PLcost * 1);
     let totalCostWL = String(WLcost * 1);
     let totalGasLimit = String(gasLimit * 1);
@@ -192,7 +192,6 @@ function App() {
   };
 
   const getSignatures = async () => {
-    console.log("getSignatures")
     const signatureResponse = await fetch("./signatures.json", {
       headers: {
         "Content-Type": "application/json",
@@ -202,7 +201,6 @@ function App() {
     const sign = await signatureResponse.json();
     console.log("signature 198 : ",sign)
     setSignature(sign);
-    
   };
   
   useEffect(() => {
@@ -210,7 +208,6 @@ function App() {
       getData();
       await getConfig();
       await getSignatures();
-      console.log(SIGNATURE);
     }
     main()
   }, [blockchain.account]);
