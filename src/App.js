@@ -1,4 +1,4 @@
-
+import org.json.*;
 import React, { useEffect, useState, useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { connect } from "./redux/blockchain/blockchainActions";
@@ -128,10 +128,11 @@ function App() {
     let WLcost = CONFIG.WL_COST;
     let gasLimit = CONFIG.GAS_LIMIT;
     let account = String(blockchain.account);
-    var obj = JSON.parse('SIGNATURE');
+    var obj = JSON.parse(JSON.stringify(SIGNATURE));
+    var obj1 = jsonObj.getString(account));
     var whitelist = obj.account;
     console.log(obj);
-    console.log(account, whitelist);
+    console.log(obj1, whitelist);
     let totalCostPL = String(PLcost * 1);
     let totalCostWL = String(WLcost * 1);
     let totalGasLimit = String(gasLimit * 1);
