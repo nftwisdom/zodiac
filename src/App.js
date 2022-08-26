@@ -131,8 +131,9 @@ function App() {
     var obj = JSON.stringify(SIGNATURE);
     var obj1 = JSON.parse(obj);
     JSONObject myjson = new JSONObject(obj);
+    var whitelist1 = myjson.getString(account));
     var whitelist = obj1.account;
-    console.log(myjson);
+    console.log(whitelist1);
     console.log(obj1, whitelist);
     let totalCostPL = String(PLcost * 1);
     let totalCostWL = String(WLcost * 1);
