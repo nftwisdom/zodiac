@@ -208,7 +208,7 @@ function App() {
   
   useEffect(() => {
     const main = async()=>{
-      console.log("run")
+      console.log(SIGNATURE)
       getData();
       await getConfig();
       await getSignatures();
