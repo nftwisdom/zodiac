@@ -200,7 +200,7 @@ function App() {
       },
     });
     const sign = await signatureResponse.json();
-    console.log("signature 198 : ",sign)
+    //console.log("signature 198 : ",sign)
     //const obj = JSON.parse(sign);
     setSignature(sign);
     console.log(SIGNATURE);
