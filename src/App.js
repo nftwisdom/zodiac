@@ -128,11 +128,11 @@ function App() {
     let WLcost = CONFIG.WL_COST;
     let gasLimit = CONFIG.GAS_LIMIT;
     let account = String(blockchain.account);
-    let whitelist = {SIGNATURE.account};
+    let whitelist = SIGNATURE.account;
     let totalCostPL = String(PLcost * 1);
     let totalCostWL = String(WLcost * 1);
     let totalGasLimit = String(gasLimit * 1);
-    console.log("Cost: ", totalCostPL);
+    console.log("Cost: ", totalCostWL);
     console.log("Gas limit: ", totalGasLimit);
     setFeedback(`Minting your ${CONFIG.NFT_NAME}...`);
     setClaimingNft(true);
@@ -142,7 +142,7 @@ function App() {
         gasLimit: String(totalGasLimit),
         to: CONFIG.CONTRACT_ADDRESS,
         from: blockchain.account,
-        value: totalCostPL,
+        value: totalCostWL,
       })
       .once("error", (err) => {
         console.log(err);
