@@ -102,7 +102,7 @@ function App() {
   const [claimingNft, setClaimingNft] = useState(false);
   const [feedback, setFeedback] = useState(`0-Aries 1-Taurus 2-Gemini 3-Cancer 4-Leo 5-Virgo 6-Libra 7-Scorpio 8-Sagittarius 9-Capricorn 10-Aquarius 11-Pisces. Choose ID and click claim to mint 1. Max 2 per wallet.`);
   const [mintID, setMintID] = useState(0);
-  const [SIGNATURE, setSignature] = useState({});
+  const [SIGNATURE, setSignature] = useState({"": ""});
   const [CONFIG, SET_CONFIG] = useState({
     CONTRACT_ADDRESS: "",
     SCAN_LINK: "",
@@ -128,7 +128,7 @@ function App() {
     let WLcost = CONFIG.WL_COST;
     let gasLimit = CONFIG.GAS_LIMIT;
     let account = String(blockchain.account);
-    var whitelist = SIGNATURE.account;
+    var whitelist = obj.account;
     console.log(account, whitelist);
     let totalCostPL = String(PLcost * 1);
     let totalCostWL = String(WLcost * 1);
@@ -201,6 +201,7 @@ function App() {
     });
     const sign = await signatureResponse.json();
     console.log("signature 198 : ",sign)
+    const obj = JSON.parse(sign);
     setSignature(sign);
   };
   
