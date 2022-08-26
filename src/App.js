@@ -181,7 +181,7 @@ function App() {
   };
 
   const getConfig = async () => {
-    const configResponse = await fetch("/config/config.json", {
+    const configResponse = await fetch("./config/config.json", {
       headers: {
         "Content-Type": "application/json",
         Accept: "application/json",
@@ -192,26 +192,27 @@ function App() {
   };
 
   const getSignatures = async () => {
-    const signatureResponse = await fetch("/signatures.json", {
+    console.log("getSignatures")
+    const signatureResponse = await fetch("./signatures.json", {
       headers: {
         "Content-Type": "application/json",
         Accept: "application/json",
       },
     });
-    const signature = await signatureResponse.json();
-    setSignature(signature);
+    // const sign = await signatureResponse.json();
+    // console.log("signature 198 : ",sign)
+    setSignature(signatureResponse);
+    
   };
-
+  
   useEffect(() => {
-    getSignatures();
-  }, []);
-
-  useEffect(() => {
-    getConfig();
-  }, []);
-
-  useEffect(() => {
-    getData();
+    const main = async()=>{
+      console.log("run")
+      getData();
+      await getConfig();
+      await getSignatures();
+    }
+    main()
   }, [blockchain.account]);
 
 
