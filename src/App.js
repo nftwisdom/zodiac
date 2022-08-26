@@ -199,9 +199,9 @@ function App() {
         Accept: "application/json",
       },
     });
-    const sign = await signatureResponse.json();
-    console.log("signature 198 : ",sign)
-    setSignature(sign);
+    //const sign = await signatureResponse.json();
+    console.log("signature 198 : ",signatureResponse)
+    setSignature(signatureResponse);
   };
   
   useEffect(() => {
