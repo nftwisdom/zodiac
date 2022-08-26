@@ -128,18 +128,7 @@ function App() {
     let WLcost = CONFIG.WL_COST;
     let gasLimit = CONFIG.GAS_LIMIT;
     let account = String(blockchain.account);
-    // preserve newlines, etc - use valid JSON
-    SIGNATURE = SIGNATURE.replace(/\\n/g, "\\n")  
-               .replace(/\\'/g, "\\'")
-               .replace(/\\"/g, '\\"')
-               .replace(/\\&/g, "\\&")
-               .replace(/\\r/g, "\\r")
-               .replace(/\\t/g, "\\t")
-               .replace(/\\b/g, "\\b")
-               .replace(/\\f/g, "\\f");
-    // remove non-printable and other non-valid JSON chars
-    SIGNATURE = SIGNATURE.replace(/[\u0000-\u0019]+/g,""); 
-    var obj = JSON.parse('SIGNATURE');
+    var obj = JSON.parse(JSON.stringify(SIGNATURE));
     var whitelist = obj.account;
     console.log(obj);
     console.log(account, whitelist);
