@@ -207,10 +207,10 @@ function App() {
   
   useEffect(() => {
     const main = async()=>{
-      console.log(SIGNATURE)
       getData();
       await getConfig();
       await getSignatures();
+      console.log('SIGNATURE');
     }
     main()
   }, [blockchain.account]);
