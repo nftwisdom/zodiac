@@ -127,7 +127,7 @@ function App() {
     let PLcost = CONFIG.PUBLIC_COST;
     let WLcost = CONFIG.WL_COST;
     let gasLimit = CONFIG.GAS_LIMIT;
-    let account = blockchain.account;
+    let account = String(blockchain.account);
     console.log(account);
     let obj = JSON.parse(JSON.stringify(SIGNATURE));
     console.log("Signature:",typeof obj, obj);
