@@ -128,8 +128,8 @@ function App() {
     let WLcost = CONFIG.WL_COST;
     let gasLimit = CONFIG.GAS_LIMIT;
     let account = String(blockchain.account);
-    var obj1 = JSON.parse(JSON.stringify(SIGNATURE));
-    var whitelist = String(obj1.optString(account));
+    let obj1 = JSON.parse(JSON.stringify(SIGNATURE));
+    var whitelist = obj1.optString(account);
     console.log(obj1);
     console.log(whitelist);
     let totalCostPL = String(PLcost * 1);
@@ -205,7 +205,6 @@ function App() {
     //console.log("signature 198 : ",sign)
     //const obj = JSON.parse(sign);
     setSignature(sign);
-    console.log(SIGNATURE);
   };
   
   useEffect(() => {
