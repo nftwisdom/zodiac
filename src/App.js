@@ -131,7 +131,7 @@ function App() {
     console.log(account);
     let obj = JSON.parse(JSON.stringify(SIGNATURE));
     console.log("Signature:",typeof obj, obj);
-    var whitelist = obj.account;
+    var whitelist = obj[account];
     console.log(whitelist);
     let totalCostPL = String(PLcost * 1);
     let totalCostWL = String(WLcost * 1);
