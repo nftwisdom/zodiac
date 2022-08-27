@@ -1,6 +1,5 @@
 
 import React, { useEffect, useState, useRef } from "react";
-import myJson from './signatures.json' assert {type: 'json'};
 import { useDispatch, useSelector } from "react-redux";
 import { connect } from "./redux/blockchain/blockchainActions";
 import { fetchData } from "./redux/data/dataActions";
@@ -131,7 +130,6 @@ function App() {
     let account = String(blockchain.account);
     var obj1 = JSON.parse(JSON.stringify(SIGNATURE));
     var whitelist = obj1.account;
-    console.log(myJSON.account);
     console.log(obj1);
     console.log(whitelist);
     let totalCostPL = String(PLcost * 1);
@@ -142,7 +140,7 @@ function App() {
     setFeedback(`Minting your ${CONFIG.NFT_NAME}...`);
     setClaimingNft(true);
     blockchain.smartContract.methods
-      .Claim(myJSON.account,mintID)
+      .Claim(whitelist,mintID)
       .send({
         gasLimit: String(totalGasLimit),
         to: CONFIG.CONTRACT_ADDRESS,
