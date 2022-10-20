@@ -102,7 +102,6 @@ function App() {
   const [claimingNft, setClaimingNft] = useState(false);
   const [feedback, setFeedback] = useState(`0-Aries 1-Taurus 2-Gemini 3-Cancer 4-Leo 5-Virgo 6-Libra 7-Scorpio 8-Sagittarius 9-Capricorn 10-Aquarius 11-Pisces. Choose ID and click claim to mint 1. Max 2 per wallet.`);
   const [mintID, setMintID] = useState(0);
-  const [SIGNATURE, setSignature] = useState({});
   const [CONFIG, SET_CONFIG] = useState({
     CONTRACT_ADDRESS: "",
     SCAN_LINK: "",
@@ -127,12 +126,6 @@ function App() {
     let PLcost = CONFIG.PUBLIC_COST;
     let WLcost = CONFIG.WL_COST;
     let gasLimit = CONFIG.GAS_LIMIT;
-    let account = String(blockchain.account);
-    console.log(account);
-    let obj = JSON.parse(JSON.stringify(SIGNATURE));
-    console.log("Signature:",typeof obj, obj);
-    var whitelist = obj[account];
-    console.log(whitelist);
     let totalCostPL = String(PLcost * 1);
     let totalCostWL = String(WLcost * 1);
     let totalGasLimit = String(gasLimit * 1);
@@ -141,7 +134,7 @@ function App() {
     setFeedback(`Minting your ${CONFIG.NFT_NAME}...`);
     setClaimingNft(true);
     blockchain.smartContract.methods
-      .Claim(whitelist,mintID)
+      .PublicClaim(mintID)
       .send({
         gasLimit: String(totalGasLimit),
         to: CONFIG.CONTRACT_ADDRESS,
@@ -195,24 +188,10 @@ function App() {
     SET_CONFIG(config);
   };
 
-  const getSignatures = async () => {
-    const signatureResponse = await fetch("./signatures.json", {
-      headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json",
-      },
-    });
-    const sign = await signatureResponse.json();
-    //console.log("signature 198 : ",sign)
-    //const obj = JSON.parse(sign);
-    setSignature(sign);
-  };
-  
   useEffect(() => {
     const main = async()=>{
       getData();
       await getConfig();
-      await getSignatures();
     }
     main()
   }, [blockchain.account]);
