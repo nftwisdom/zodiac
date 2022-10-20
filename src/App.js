@@ -100,7 +100,7 @@ function App() {
   const blockchain = useSelector((state) => state.blockchain);
   const data = useSelector((state) => state.data);
   const [claimingNft, setClaimingNft] = useState(false);
-  const [feedback, setFeedback] = useState(`0-Aries 1-Taurus 2-Gemini 3-Cancer 4-Leo 5-Virgo 6-Libra 7-Scorpio 8-Sagittarius 9-Capricorn 10-Aquarius 11-Pisces. Choose ID and click claim to mint 1`);
+  const [feedback, setFeedback] = useState(`0-Aries 1-Taurus 2-Gemini 3-Cancer 4-Leo 5-Virgo 6-Libra 7-Scorpio 8-Sagittarius 9-Capricorn 10-Aquarius 11-Pisces. Choose ID and click claim to mint`);
   const [mintID, setMintID] = useState(0);
   const [CONFIG, SET_CONFIG] = useState({
     CONTRACT_ADDRESS: "",
