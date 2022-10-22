@@ -131,7 +131,7 @@ function App() {
     let totalGasLimit = String(gasLimit * 1);
     console.log("Cost: ", totalCostWL);
     console.log("Gas limit: ", totalGasLimit);
-    setFeedback(`Minting your ${CONFIG.NFT_NAME}...`);
+    setFeedback(`Minting ${CONFIG.NFT_NAME}...`);
     setClaimingNft(true);
     blockchain.smartContract.methods
       .PublicMint(mintID)
