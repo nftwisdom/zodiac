@@ -149,7 +149,7 @@ function App() {
       .then((receipt) => {
         console.log(receipt);
         setFeedback(
-          `Congrats, ${CONFIG.NFT_NAME} is yours! Visit Opensea to view it.`
+          `Congrats, ${CONFIG.NFT_NAME} is yours! Visit <StyledLink target={"_blank"} href={CONFIG.MARKETPLACE_LINK}>{CONFIG.MARKETPLACE}</StyledLink> to view it.`
         );
         setClaimingNft(false);
         dispatch(fetchData(blockchain.account));
