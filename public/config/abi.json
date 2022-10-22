@@ -37,27 +37,19 @@
 				"type": "bytes"
 			},
 			{
-				"internalType": "uint256",
-				"name": "i",
-				"type": "uint256"
-			}
-		],
-		"name": "Claim",
-		"outputs": [],
-		"stateMutability": "payable",
-		"type": "function"
-	},
-	{
-		"inputs": [
+				"internalType": "uint256[]",
+				"name": "id",
+				"type": "uint256[]"
+			},
 			{
-				"internalType": "uint256",
-				"name": "i",
-				"type": "uint256"
+				"internalType": "uint256[]",
+				"name": "amount",
+				"type": "uint256[]"
 			}
 		],
-		"name": "ClaimPublic",
+		"name": "DevMint",
 		"outputs": [],
-		"stateMutability": "payable",
+		"stateMutability": "nonpayable",
 		"type": "function"
 	},
 	{
@@ -134,6 +126,19 @@
 		],
 		"name": "OwnershipTransferred",
 		"type": "event"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "i",
+				"type": "uint256"
+			}
+		],
+		"name": "PublicMint",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
 	},
 	{
 		"inputs": [],
@@ -235,6 +240,19 @@
 			}
 		],
 		"name": "setSalesState",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "newSigner",
+				"type": "address"
+			}
+		],
+		"name": "setSigner",
 		"outputs": [],
 		"stateMutability": "nonpayable",
 		"type": "function"
@@ -371,19 +389,6 @@
 		"type": "function"
 	},
 	{
-		"inputs": [
-			{
-				"internalType": "uint256",
-				"name": "_price",
-				"type": "uint256"
-			}
-		],
-		"name": "updateWLprice",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
 		"anonymous": false,
 		"inputs": [
 			{
@@ -401,19 +406,6 @@
 		],
 		"name": "URI",
 		"type": "event"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "uint256",
-				"name": "_amount",
-				"type": "uint256"
-			}
-		],
-		"name": "withdraw",
-		"outputs": [],
-		"stateMutability": "payable",
-		"type": "function"
 	},
 	{
 		"inputs": [],
@@ -537,17 +529,17 @@
 	{
 		"inputs": [
 			{
-				"internalType": "bytes",
-				"name": "signature",
-				"type": "bytes"
+				"internalType": "uint256",
+				"name": "_id",
+				"type": "uint256"
 			}
 		],
-		"name": "checkSigner",
+		"name": "checkremain",
 		"outputs": [
 			{
-				"internalType": "address",
+				"internalType": "uint256",
 				"name": "",
-				"type": "address"
+				"type": "uint256"
 			}
 		],
 		"stateMutability": "view",
@@ -683,19 +675,6 @@
 	},
 	{
 		"inputs": [],
-		"name": "PUBLIC_PRICE",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [],
 		"name": "SAGITTARIUS",
 		"outputs": [
 			{
@@ -779,6 +758,19 @@
 		"type": "function"
 	},
 	{
+		"inputs": [],
+		"name": "total_supply",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
 		"inputs": [
 			{
 				"internalType": "uint256",
@@ -798,13 +790,19 @@
 		"type": "function"
 	},
 	{
-		"inputs": [],
-		"name": "VIRGO",
+		"inputs": [
+			{
+				"internalType": "bytes",
+				"name": "signature",
+				"type": "bytes"
+			}
+		],
+		"name": "verifySigner",
 		"outputs": [
 			{
-				"internalType": "uint256",
+				"internalType": "bool",
 				"name": "",
-				"type": "uint256"
+				"type": "bool"
 			}
 		],
 		"stateMutability": "view",
@@ -812,7 +810,7 @@
 	},
 	{
 		"inputs": [],
-		"name": "WHITELIST_PRICE",
+		"name": "VIRGO",
 		"outputs": [
 			{
 				"internalType": "uint256",
