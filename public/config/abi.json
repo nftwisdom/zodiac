@@ -196,18 +196,31 @@
 	{
 		"inputs": [
 			{
-				"internalType": "bytes",
-				"name": "signature",
-				"type": "bytes"
-			},
-			{
 				"internalType": "uint256[]",
-				"name": "id",
+				"name": "ids",
 				"type": "uint256[]"
 			},
 			{
 				"internalType": "uint256[]",
-				"name": "amount",
+				"name": "values",
+				"type": "uint256[]"
+			}
+		],
+		"name": "DevBurn",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256[]",
+				"name": "ids",
+				"type": "uint256[]"
+			},
+			{
+				"internalType": "uint256[]",
+				"name": "amounts",
 				"type": "uint256[]"
 			}
 		],
@@ -269,6 +282,19 @@
 		"type": "function"
 	},
 	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "i",
+				"type": "uint256"
+			}
+		],
+		"name": "Mint",
+		"outputs": [],
+		"stateMutability": "payable",
+		"type": "function"
+	},
+	{
 		"inputs": [],
 		"name": "PISCES",
 		"outputs": [
@@ -282,16 +308,16 @@
 		"type": "function"
 	},
 	{
-		"inputs": [
+		"inputs": [],
+		"name": "PRICE",
+		"outputs": [
 			{
 				"internalType": "uint256",
-				"name": "i",
+				"name": "",
 				"type": "uint256"
 			}
 		],
-		"name": "PublicMint",
-		"outputs": [],
-		"stateMutability": "nonpayable",
+		"stateMutability": "view",
 		"type": "function"
 	},
 	{
@@ -615,19 +641,6 @@
 	{
 		"inputs": [
 			{
-				"internalType": "address",
-				"name": "newSigner",
-				"type": "address"
-			}
-		],
-		"name": "setSigner",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
 				"internalType": "string",
 				"name": "newuri",
 				"type": "string"
@@ -712,24 +725,6 @@
 	{
 		"inputs": [
 			{
-				"internalType": "address",
-				"name": "_add",
-				"type": "address"
-			},
-			{
-				"internalType": "uint256",
-				"name": "_amount",
-				"type": "uint256"
-			}
-		],
-		"name": "updatebalanceWL",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
 				"internalType": "uint256",
 				"name": "",
 				"type": "uint256"
@@ -749,20 +744,14 @@
 	{
 		"inputs": [
 			{
-				"internalType": "bytes",
-				"name": "signature",
-				"type": "bytes"
+				"internalType": "uint256",
+				"name": "_amount",
+				"type": "uint256"
 			}
 		],
-		"name": "verifySigner",
-		"outputs": [
-			{
-				"internalType": "bool",
-				"name": "",
-				"type": "bool"
-			}
-		],
-		"stateMutability": "view",
+		"name": "withdraw",
+		"outputs": [],
+		"stateMutability": "payable",
 		"type": "function"
 	}
 ]
