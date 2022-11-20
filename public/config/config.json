@@ -1,18 +1,18 @@
 {
-  "CONTRACT_ADDRESS": "0x96593AdE40F78D48773777A982440fFf587e65e2",
-  "SCAN_LINK": "https://goerli.etherscan.io/address/0x96593AdE40F78D48773777A982440fFf587e65e2",
+  "CONTRACT_ADDRESS": "0xBd4bAeac214361BCDB668B735aD02e8470266FAB",
+  "SCAN_LINK": "https://goerli.etherscan.io/address/0xBd4bAeac214361BCDB668B735aD02e8470266FAB",
   "NETWORK": {
-    "NAME": "Goerli Test Network",
+    "NAME": "Ethereum Mainnet",
     "SYMBOL": "ETH",
-    "ID": 5
+    "ID": 1
   },
-  "NFT_NAME": "The Signs Of Zodiac",
+  "NFT_NAME": "The Signs Of Zodiacs",
   "SYMBOL": "ZODIAC",
   "MAX_SUPPLY": 1800,
   "PUBLIC_COST": 12000000000000000,
   "DISPLAY_COST": 0.012,
   "GAS_LIMIT": 180000,
   "MARKETPLACE": "Opensea",
-  "MARKETPLACE_LINK": "https://testnets.opensea.io/collection/signs-of-zodiac-v2",
+  "MARKETPLACE_LINK": "https://opensea.io/collection/signs-of-zodiacs",
   "SHOW_BACKGROUND": true
 }
