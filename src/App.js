@@ -132,7 +132,7 @@ function App() {
     console.log("Cost: ", totalCostWL);
     console.log("Gas limit: ", totalGasLimit);
     setFeedback(`Minting ${CONFIG.NFT_NAME}...`);
-    setClaimingNft(false);
+    setClaimingNft(true);
     blockchain.smartContract.methods
       .Mint(mintID)
       .send({
