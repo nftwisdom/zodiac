@@ -11,7 +11,7 @@
   "MAX_SUPPLY": 1800,
   "PUBLIC_COST": 12000000000000000,
   "DISPLAY_COST": 0.012,
-  "GAS_LIMIT": 180000,
+  "GAS_LIMIT": 150000,
   "MARKETPLACE": "Opensea",
   "MARKETPLACE_LINK": "https://opensea.io/collection/signs-of-zodiacs",
   "SHOW_BACKGROUND": true
